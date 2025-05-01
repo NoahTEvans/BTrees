@@ -25,7 +25,7 @@ public class BTreeMain
 
         try
         {
-            BufferedReader br = new BufferedReader(new FileReader("C:/Users/rocky/OneDrive/Desktop/BTree Data File.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("/Users/justinsnider/Desktop/BTreeDataFile.txt"));
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
             List<String> lines = new ArrayList<String>();
