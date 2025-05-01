@@ -82,7 +82,7 @@ public class BTree<T extends Comparable<T>>
     }
     
     public boolean search(String key) {
-        
+        return false;
     }
 
 }
