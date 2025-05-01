@@ -4,6 +4,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
+import stopwatch.StopWatch;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -49,5 +52,13 @@ public class BTreeMain
         {
             System.out.println(ex);
         }
+        
+        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("What would you like to search for?: ");
+        String name = scanner.nextLine();
+
+        scanner.close();
     }
 }

@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+ import java.io.FileWriter;
+ import java.io.IOException;
+
 /**
  *
  * @author NoahTEvans
@@ -58,6 +61,28 @@ public class BTree<T extends Comparable<T>>
         {
             root.insert(node);
         }
+    }
+    
+    public void inOrderTraverse(BTNode node) {
+        if (node != null) {
+            inOrderTraverse(node.leftNode);
+            try (FileWriter writer = new FileWriter("output.txt")) {
+                writer.write(node.info.toString());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println(node.info);
+            inOrderTraverse(node.rightNode);
+            try (FileWriter writer = new FileWriter("output.txt")) {
+                writer.write(node.info.toString());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    public boolean search(String key) {
+        
     }
 
 }
