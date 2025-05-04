@@ -47,21 +47,23 @@ public class BTreeMain
                 System.out.println(animal);
                 tree.insert(animal);
             }
-        
+            
             StopWatch stopWatch = new StopWatch();
             Scanner scanner = new Scanner(System.in);
-
-            System.out.print("What would you like to search for?: ");
-            String key = scanner.nextLine();
             
-            stopWatch.start();
-            Boolean searchResult = tree.search(key);
-            stopWatch.stop();
+            while (true) {
 
-            System.out.println("The search returned " + searchResult);
-            System.out.println("It took " + stopWatch.getRecordedMillis());
+                System.out.print("What would you like to search for?: ");
+                String key = scanner.nextLine();
 
-            scanner.close();
+                stopWatch.start();
+                Boolean searchResult = tree.search(key);
+                stopWatch.stop();
+
+                System.out.println("The search returned " + searchResult);
+                System.out.println("It took " + stopWatch.getRecordedMillis() + " Milliseconds");
+
+            }
 
         } catch (Exception ex)
         {

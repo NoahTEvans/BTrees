@@ -18,9 +18,9 @@ public class BTree<T extends Comparable<T>>
 
         private BTNode leftNode;
         private BTNode rightNode;
-        private Comparable info;
+        private T info;
 
-        BTNode(Comparable info)
+        BTNode(T info)
         {
             this.info = info;
         }
@@ -44,6 +44,31 @@ public class BTree<T extends Comparable<T>>
                 } else
                 {
                     rightNode = node;
+                }
+            }
+        }
+        
+        public boolean search(T key) {
+            int compareResult = key.compareTo(info);
+            if (compareResult == 0) {
+                return true;
+            } else if (compareResult < 0)
+            { // go left
+                if (leftNode != null)
+                {
+                    return leftNode.search(key);
+                } else
+                {
+                    return false;
+                }
+            } else
+            { // go right
+                if (rightNode != null)
+                {
+                    return rightNode.search(key);
+                } else
+                {
+                    return false;
                 }
             }
         }
@@ -81,8 +106,14 @@ public class BTree<T extends Comparable<T>>
         }
     }
     
-    public boolean search(String key) {
-        return false;
+    public boolean search(T key) {
+        if (root == null) {
+            return false;
+        } else if (root.info == key) {
+            return true;
+        } else {
+            return root.search(key);
+        }
     }
 
 }
