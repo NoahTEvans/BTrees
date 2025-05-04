@@ -18,9 +18,9 @@ public class BTree<T extends Comparable<T>>
 
         private BTNode leftNode;
         private BTNode rightNode;
-        private Comparable info;
+        private T info;
 
-        BTNode(Comparable info)
+        BTNode(T info)
         {
             this.info = info;
         }

@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import stopwatchtest.Stopwatch;
+import stopwatch.StopWatch;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -66,7 +66,7 @@ public class BTreeMain
             if (!input.equalsIgnoreCase("exit"))
             {
                 //start stop watch 
-                Stopwatch watch = new Stopwatch();
+                StopWatch watch = new StopWatch();
                 watch.start();
                 
                 //perform search
@@ -74,7 +74,7 @@ public class BTreeMain
 
                 watch.stop();
                 System.out.println("Found? " + found);
-                System.out.println("Search took " + watch.getRuntime() + " ms");
+                System.out.println("Search took " + watch.getRecordedMillis() + " ms");
             }
 
         } while (!input.equalsIgnoreCase("exit"));
